@@ -1,4 +1,4 @@
-version: 2.1
+version: 1.0
 
 description: >
   An orb that allows users to run commands using the Datree CLI.

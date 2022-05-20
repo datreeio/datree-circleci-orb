@@ -3,7 +3,7 @@ description: >
 docker:
   - image: 'datree/datree:<<parameters.cli-version>>'
 parameters:
-  node-version:
+  cli-version:
     default: latest
     description: >
       Pick a specific datree image variant
