@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  <orb-name>: <namespace>/<orb-name>@dev:<<pipeline.git.revision>>
+  datree: datree/datree@dev:<<pipeline.git.revision>>
   orb-tools: circleci/orb-tools@11.1
 
 filters: &filters
@@ -14,7 +14,7 @@ jobs:
       steps:
         - checkout
         # Run your orb's commands to validate them.
-        - <orb-name>/test
+        - datree/test
 workflows:
   test-deploy:
     jobs:
