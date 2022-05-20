@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  <orb-name>: <namespace>/<orb-name>@dev:<<pipeline.git.revision>>
+  datree: naorpeled/datree@dev:<<pipeline.git.revision>>
   orb-tools: circleci/orb-tools@11.1
 
 filters: &filters
@@ -8,15 +8,18 @@ filters: &filters
     only: /.*/
 
 jobs:
-    # Create a job to test the commands of your orbs.
-    # You may want to add additional validation steps to ensure the commands are working as expected.
     command-tests:
-      docker:
-        - image: cimg/base:current
+      executor: datree/default
+
+      environment:
+        - name: DATREE_TOKEN
+          value: $DATREE_TOKEN
+
       steps:
         - checkout
-        # Run your orb's commands to validate them.
-        - <orb-name>/greet
+        - datree/test:
+            path: "."
+            arguments: "--output=json"
 workflows:
   test-deploy:
     jobs:
@@ -26,13 +29,13 @@ workflows:
       - orb-tools/pack:
           filters: *filters
       - orb-tools/publish:
-          orb-name: <namespace>/<orb-name>
+          orb-name: naorpeled/datree
           vcs-type: << pipeline.project.type >>
           pub-type: production
           requires:
             - orb-tools/pack
             - command-tests
-          context: <publishing-context>
+          context: orb-publishing
           filters:
             branches:
               ignore: /.*/
