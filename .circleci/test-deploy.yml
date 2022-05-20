@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  datree: datree/datree@dev:<<pipeline.git.revision>>
+  datree: datree/datree@1.0.0
   orb-tools: circleci/orb-tools@11.1
 
 filters: &filters
