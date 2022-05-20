@@ -1,7 +1,9 @@
 version: 2.1
 
 description: >
-  An orb that allows users to run commands using the Datree CLI
+  An orb that allows users to run commands using the Datree CLI.
+  Datree is a CLI tool that supports Kubernetes admins in their roles
+  by preventing developers from making errors in Kubernetes configurations that can cause clusters to fail in production
 
 display:
   home_url: "https://datree.io/"
