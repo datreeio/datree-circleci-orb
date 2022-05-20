@@ -21,16 +21,16 @@ workflows:
           exclude: SC2148,SC2038,SC2086,SC2002,SC2016
           filters: *filters
       - orb-tools/publish:
-          orb-name: <namespace>/<orb-name>
+          orb-name: datree/datree
           vcs-type: << pipeline.project.type >>
           requires:
             [orb-tools/lint, orb-tools/review, orb-tools/pack, shellcheck/check]
           # Use a context to hold your publishing token.
-          context: <publishing-context>
+          context: org-global
           filters: *filters
       # Triggers the next workflow in the Orb Development Kit.
       - orb-tools/continue:
-          pipeline-number: << pipeline.number >>
-          vcs-type: << pipeline.project.type >>
+          pipeline-number: 93e6cd91-da4e-4b4e-b8da-0664f4ce9cfe
+          vcs-type: github
           requires: [orb-tools/publish]
           filters: *filters
