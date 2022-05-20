@@ -24,13 +24,13 @@ workflows:
       - orb-tools/pack:
           filters: *filters
       - orb-tools/publish:
-          orb-name: naorpeled/datree@1.0
+          orb-name: naorpeled/datree
           vcs-type: << pipeline.project.type >>
           pub-type: production
           requires:
             - orb-tools/pack
             - command-tests
-          context: <publishing-context>
+          context: orb-publishing
           filters:
             branches:
               ignore: /.*/
