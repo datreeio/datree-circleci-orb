@@ -1,0 +1,13 @@
+description: >
+  Sample description
+
+executor: default
+
+parameters:
+  file:
+    type: string
+    default: "."
+    description: "Which file(s) to run the test on?"
+steps:
+  - test:
+      file: << parameters.file >>

@@ -1,0 +1,12 @@
+description: >
+  This command runs the Datree CLI test command on a given file.
+
+parameters:
+  file:
+    type: string
+    default: "."
+    description: "Which file(s) to run the test on?"
+steps:
+  - run:
+      name: Run Datree Test Command
+      command: datree test <<parameters.file>>
