@@ -1,7 +1,7 @@
 description: >
   Docker executor with Datree CLI installed
 docker:
-  - image: 'datree/datree:<<parameters.cli-version>>'
+  - image: datree/datree:<<parameters.cli-version>>
 parameters:
   cli-version:
     default: latest
