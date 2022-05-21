@@ -9,4 +9,4 @@ parameters:
 steps:
   - run:
       name: Run Datree Test Command
-      command: datree test <<parameters.file>>
+      command: test <<parameters.file>>
