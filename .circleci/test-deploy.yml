@@ -13,7 +13,7 @@ jobs:
         - image: cimg/base:current
       steps:
         - checkout
-        - test
+        - datree/test
 workflows:
   test-deploy:
     jobs:
