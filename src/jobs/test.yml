@@ -16,6 +16,5 @@ parameters:
 
 steps:
   - test:
-      command: "datree test"
       file: <<parameters.file>>
       arguments: <<parameters.args>>
