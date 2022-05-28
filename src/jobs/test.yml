@@ -18,4 +18,4 @@ steps:
   - test:
       command: "datree test"
       file: <<parameters.file>>
-      additional-arguments: <<parameters.args>>
+      arguments: <<parameters.args>>

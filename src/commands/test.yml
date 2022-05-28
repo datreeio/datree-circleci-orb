@@ -6,7 +6,11 @@ parameters:
     type: string
     default: "."
     description: "Which file(s) to run the test on?"
+  arguments:
+    type: string
+    default: ""
+    description: "Additional arguments to pass to the test command"
 steps:
   - run:
       name: Run Datree Test Command
-      command: datree test <<parameters.file>>
+      command: datree test <<parameters.file>> <<parameters.arguments>>
