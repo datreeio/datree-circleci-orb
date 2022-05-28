@@ -9,6 +9,11 @@ parameters:
     type: string
     default: "."
     description: "Which file(s) to run the test on?"
+  args:
+    type: string
+    default: ""
+    description: "Additional arguments to pass to the test command"
+
 steps:
   - test:
       command: "datree test"
