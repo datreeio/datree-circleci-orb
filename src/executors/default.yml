@@ -1,6 +1,7 @@
 description: >
   Docker executor with Datree CLI installed
 docker:
+  - image: cimg/base:current
   - image: datree/datreeci:<<parameters.cli-version>>
 parameters:
   cli-version:
