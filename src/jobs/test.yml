@@ -2,7 +2,7 @@ description: >
   Sample description
 
 docker:
-  - image: datree/datree-cli:<parameters.cli-version>
+  - image: datree/datree-cli:<<parameters.cli-version>>
 
 parameters:
   cli-version:
@@ -13,11 +13,11 @@ parameters:
     type: string
     default: "."
     description: "Which file(s) to run the test on?"
-  args:
+  arguments:
     type: string
     default: ""
     description: "Additional arguments to pass to the test command"
 steps:
   - test:
       file: <<parameters.file>>
-      arguments: <<parameters.args>>
+      arguments: <<parameters.arguments>>
