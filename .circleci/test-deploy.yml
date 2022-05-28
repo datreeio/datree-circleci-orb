@@ -13,7 +13,10 @@ jobs:
         - image: cimg/base:current
       steps:
         - checkout
-        - datree/test
+        - datree/test:
+            file: "."
+            arguments: "--output=json"
+            cli-version: "latest"
 workflows:
   test-deploy:
     jobs:
