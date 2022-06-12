@@ -1,0 +1,27 @@
+kind: Pod
+apiVersion: v1
+
+metadata:
+  name: pass-policy-name
+spec:
+  containers:
+    - name: app
+      image: nginx:1.19.8
+      readinessProbe:
+        httpGet:
+          path: /
+          port: 80
+      livenessProbe:
+        httpGet:
+          path: /healthz
+          port: 8080
+          httpHeaders:
+            - name: Custom-Header
+              value: Awesome
+      resources:
+        limits:
+          cpu: "1"
+          memory: "1Gi"
+        requests:
+            cpu: "1"
+            memory: "1Gi"
