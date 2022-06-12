@@ -8,4 +8,4 @@ parameters:
     default: "latest"
 
 docker:
-  - image: datree/datreeci:<<pameters.cli-version>>
+  - image: datree/datreeci:<<parameters.cli-version>>
