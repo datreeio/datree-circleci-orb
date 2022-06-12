@@ -31,7 +31,7 @@ steps:
   - run:
       name: Run Datree Test Command
       environment:
-      FILE: <<parameters.file>>
+      TARGET_FILE: <<parameters.file>>
       ARGUMENTS: <<parameters.arguments>>
       IS_HELM_CHART: <<parameters.isHelmChart>>
       HELM_ARGUMENTS: <<parameters.helmArguments>>
