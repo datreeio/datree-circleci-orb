@@ -31,10 +31,10 @@ steps:
   - run:
       name: Run Datree Test Command
       environment:
-      TARGET_PATH: <<parameters.path>>
-      ARGUMENTS: <<parameters.arguments>>
-      IS_HELM_CHART: <<parameters.isHelmChart>>
-      HELM_ARGUMENTS: <<parameters.helmArguments>>
-      IS_KUSTOMIZATION: <<parameters.isKustomization>>
-      KUSTOMIZE_ARGUMENTS: <<parameters.kustomizeArguments>>
+        TARGET_PATH: <<parameters.path>>
+        ARGUMENTS: <<parameters.arguments>>
+        IS_HELM_CHART: <<parameters.isHelmChart>>
+        HELM_ARGUMENTS: <<parameters.helmArguments>>
+        IS_KUSTOMIZATION: <<parameters.isKustomization>>
+        KUSTOMIZE_ARGUMENTS: <<parameters.kustomizeArguments>>
       command: <<include(scripts/test.sh)>>
