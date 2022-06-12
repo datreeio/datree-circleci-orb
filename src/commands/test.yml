@@ -2,9 +2,9 @@ description: >
   This command runs the Datree CLI test command on a given file.
 
 parameters:
-  file:
+  path:
     type: string
-    default: "."
+    default: '**/*.yaml'
     description: "Which file(s) to run the test on?"
   arguments:
     type: string
@@ -31,7 +31,7 @@ steps:
   - run:
       name: Run Datree Test Command
       environment:
-      TARGET_FILE: <<parameters.file>>
+      TARGET_PATH: <<parameters.path>>
       ARGUMENTS: <<parameters.arguments>>
       IS_HELM_CHART: <<parameters.isHelmChart>>
       HELM_ARGUMENTS: <<parameters.helmArguments>>
