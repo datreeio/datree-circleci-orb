@@ -9,12 +9,11 @@ filters: &filters
 
 jobs:
     command-tests:
-      docker:
-        - image: cimg/base:current
+      executor: datree/default
+
       steps:
         - checkout
         - datree/test:
-            executor: datree/default
             file: "."
             arguments: "--output=json"
 workflows:
