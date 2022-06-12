@@ -11,6 +11,10 @@ jobs:
     command-tests:
       executor: datree/default
 
+      environment:
+        - name: DATREE_TOKEN
+          value: $DATREE_TOKEN
+
       steps:
         - checkout
         - datree/test:
