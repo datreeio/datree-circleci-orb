@@ -2,7 +2,7 @@ description: >
   Sample description
 
 docker:
-  - image: datree/datree-cli:<<parameters.cli-version>>
+  - image: datree/datreeci:<<parameters.cli-version>>
 
 parameters:
   cli-version:
