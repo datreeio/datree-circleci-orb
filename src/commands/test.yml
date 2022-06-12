@@ -6,7 +6,7 @@ parameters:
     type: string
     default: '**/*.yaml'
     description: "Which file(s) to run the test on?"
-  arguments:
+  cliArguments:
     type: string
     default: ""
     description: "Additional arguments to pass to the test command"
@@ -32,7 +32,7 @@ steps:
       name: Run Datree Test Command
       environment:
         TARGET_PATH: <<parameters.path>>
-        ARGUMENTS: <<parameters.arguments>>
+        CLI_ARGUMENTS: <<parameters.cliArguments>>
         IS_HELM_CHART: <<parameters.isHelmChart>>
         HELM_ARGUMENTS: <<parameters.helmArguments>>
         IS_KUSTOMIZATION: <<parameters.isKustomization>>

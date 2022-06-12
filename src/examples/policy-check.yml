@@ -5,7 +5,8 @@ usage:
   version: 2.1
   orbs:
     datree: naorpeled/datree@1.0.0
-  workflows:
+
+workflows:
     policy-check:
       jobs:
         - name: Run Datree Policy Check

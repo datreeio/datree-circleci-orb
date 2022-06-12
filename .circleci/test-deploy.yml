@@ -19,7 +19,7 @@ jobs:
         - checkout
         - datree/test:
             path: "."
-            arguments: "--output=json"
+            cliArguments: "--output=json"
 workflows:
   test-deploy:
     jobs:
