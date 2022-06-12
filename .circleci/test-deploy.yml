@@ -16,7 +16,6 @@ jobs:
         - datree/test:
             file: "."
             arguments: "--output=json"
-            cli-version: "latest"
 workflows:
   test-deploy:
     jobs:
