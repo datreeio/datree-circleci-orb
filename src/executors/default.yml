@@ -1,0 +1,11 @@
+description: |
+  An image intended to run the Datree CLI as part of your CI, including Helm & Kustomize support.
+parameters:
+  cli-version:
+    description: >
+      Select your Datree CLI version or any of the available tags here: https://hub.docker.com/r/datree/datreeci.
+    type: string
+    default: "latest"
+
+docker:
+  - image: datree/datreeci:<<pameters.cli-version>>

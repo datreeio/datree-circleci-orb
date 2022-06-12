@@ -14,6 +14,7 @@ jobs:
       steps:
         - checkout
         - datree/test:
+            executor: datree/default
             file: "."
             arguments: "--output=json"
 workflows:
