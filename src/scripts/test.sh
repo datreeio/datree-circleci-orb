@@ -18,11 +18,15 @@ fi
 
 if [ "$isHelmChart" = "true" ]; then
     printf "Running datree on helm chart\n"
+    printf "helm arguments: $helmArguments\n"
     helm datree test $targetFile $cliArguments -- $helmArguments
 elif [ "$isKustomization" = "true" ]; then
     printf "Running datree on kustomization\n"
+    printf "kustomize datree test $targetFile $cliArguments -- $kustomizeArguments\n"
     datree kustomize test $targetFile $cliArguments -- $kustomizeArguments
 else
     printf "Running datree on file\n"
+    printf "Target file: $targetFile\n"
+    printf "CLI arguments: $cliArguments\n"
     datree test $targetFile $cliArguments
 fi
