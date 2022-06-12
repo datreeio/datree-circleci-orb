@@ -5,6 +5,8 @@ CircleCI orb for using the Datree CLI in your CircleCI jobs.
 # What is Datree?
 Datree is a CLI tool that provides a policy enforcement solution to run automatic checks for rule violations on Kuberenetes configuration files.  
 This orb exposes a command and executor that run the Datree CLI against given k8s configuration file(s) in your repository, featuring full **Helm** and **Kustomize** support.
+
+
 To learn more about Datree, visit the [Datree website](https://www.datree.io/).
 
 ## Resources
@@ -14,7 +16,7 @@ To learn more about Datree, visit the [Datree website](https://www.datree.io/).
 [CircleCI Orb Docs](https://circleci.com/docs/2.0/orb-intro/#section=configuration) - Docs for using and creating CircleCI Orbs
 
 ### How to use?
-Examples can be found in [here](https://circleci.com/developer/orbs/orb/naorpeled/datree#quick-start).
+Examples can be found [here](https://circleci.com/developer/orbs/orb/naorpeled/datree#quick-start).
 
 ### How to Contribute
 Feel free to contribute to this orb by opening an issue or creating a pull request.
