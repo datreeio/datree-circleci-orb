@@ -18,7 +18,7 @@ jobs:
       steps:
         - checkout
         - datree/test:
-            path: "./tests-data/sample-policy/policy.yaml"
+            path: "./tests-data/sample-policy.yaml"
             cliArguments: "--output=json"
 workflows:
   test-deploy:
