@@ -10,7 +10,31 @@ parameters:
     type: string
     default: ""
     description: "Additional arguments to pass to the test command"
+  isHelmChart:
+    type: boolean
+    default: false
+    description: "Are we running the test on a Helm chart?"
+  helmArguments:
+    type: string
+    default: ""
+    description: "Additional arguments to pass to the helm test command"
+  isKustomization:
+    type: boolean
+    default: false
+    description: "Are we running the test on a Kustomization file?"
+  kustomizeArguments:
+    type: string
+    default: ""
+    description: "Additional arguments to pass to the kustomize test command"
+
 steps:
   - run:
       name: Run Datree Test Command
-      command: datree test <<parameters.file>> <<parameters.arguments>>
+      environment:
+      FILE: <<parameters.file>>
+      ARGUMENTS: <<parameters.arguments>>
+      IS_HELM_CHART: <<parameters.isHelmChart>>
+      HELM_ARGUMENTS: <<parameters.helmArguments>>
+      IS_KUSTOMIZATION: <<parameters.isKustomization>>
+      KUSTOMIZE_ARGUMENTS: <<parameters.kustomizeArguments>>
+      command: <<include(scripts/test.sh)>>
