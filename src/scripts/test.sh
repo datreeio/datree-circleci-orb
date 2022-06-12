@@ -1,7 +1,7 @@
 #!/bin/sh
 
 targetPath="$TARGET_PATH"
-cliArguments="$ARGUMENTS"
+arguments="$ARGUMENTS"
 isHelmChart="$IS_HELM_CHART"
 helmArguments="$HELM_ARGUMENTS"
 isKustomization="$IS_KUSTOMIZATION"
@@ -17,14 +17,9 @@ if [ -z "$DATREE_TOKEN" ]; then
 fi
 
 if [ "$isHelmChart" = "true" ]; then
-    printf "Running datree on helm chart\n"
-    helm datree test $targetPath $cliArguments -- $helmArguments
+    helm datree test $targetPath $arguments -- $helmArguments
 elif [ "$isKustomization" = "true" ]; then
-    printf "Running datree on kustomization\n"
-    datree kustomize test $targetPath $cliArguments -- $kustomizeArguments
+    datree kustomize test $targetPath $arguments -- $kustomizeArguments
 else
-    printf "Running datree on file\n"
-    printf "Target file: %s\n" $targetPath
-    printf "CLI arguments: %s\n" $cliArguments
-    datree test $targetPath $cliArguments
+    datree test $targetPath $arguments
 fi
