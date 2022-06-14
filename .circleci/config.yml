@@ -30,7 +30,7 @@ workflows:
           filters: *filters
       # Triggers the next workflow in the Orb Development Kit.
       - orb-tools/continue:
-          pipeline-number: 1
+          pipeline-number: << pipeline.number >>
           vcs-type: github
           requires: [orb-tools/publish]
           filters: *filters
