@@ -24,7 +24,7 @@ Feel free to contribute to this orb by opening an issue or creating a pull reque
 
 ## 🏹 Resources
 
-[Datree's website](https://www.datree.io/)
+[Datree's website](https://www.datree.io/) - The official Datree website.
 
 [CircleCI Orb Registry Page](https://circleci.com/orbs/registry/orb/naorpeled/datree) - The official registry page of this orb for all versions, executors, commands, and jobs described.
 
