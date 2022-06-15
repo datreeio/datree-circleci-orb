@@ -12,7 +12,7 @@ datree version
 printf "\n"
 
 if [ -z "$DATREE_TOKEN" ]; then
-    printf "No account token configured, see https://github.com/datreeio/action-datree for instructions\n"
+    printf "No account token configured, see https://github.com/naorpeled/datree-circleci-orb for instructions\n"
     exit 1
 fi
 
