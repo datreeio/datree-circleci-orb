@@ -11,7 +11,8 @@ usage:
       executor: datree/default
 
       environment:
-        DATREE_TOKEN: $DATREE_TOKEN
+        - name: DATREE_TOKEN
+          value: $DATREE_TOKEN
       steps:
         - checkout
         - datree/test:
