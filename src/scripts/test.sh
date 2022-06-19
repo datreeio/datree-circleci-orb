@@ -11,20 +11,17 @@ printf "datree version: "
 datree version
 printf "\n"
 
-# shellcheck disable=SC2059
-printf "isHelmChart: $isHelmChart\n"
-
 if [ -z "$DATREE_TOKEN" ]; then
     printf "No account token configured, see https://github.com/naorpeled/datree-circleci-orb for instructions\n"
     exit 1
 fi
 
-if [ "$isHelmChart" = true ]; then
+if [ "$isHelmChart" = "true" ]; then
     printf "Testing helm chart\n"
     # shellcheck disable=SC2059
     printf "target path: $targetPath\n"
     helm datree test $targetPath $cliArguments -- $helmArguments
-elif [ "$isKustomization" = true ]; then
+elif [ "$isKustomization" = "true" ]; then
     datree kustomize test $targetPath $cliArguments -- $kustomizeArguments
 else
     datree test $targetPath $cliArguments
