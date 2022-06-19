@@ -17,11 +17,11 @@ jobs:
 
       steps:
         - checkout
-#        - datree/test:
-#            path: "./tests-data/sample-policy.yaml"
-#            cliArguments: "--output=json"
         - datree/test:
-            path: "./tests-data/sample-helm-policy"
+            path: "./tests-data/sample-policy.yaml"
+            cliArguments: "--output=json"
+        - datree/test:
+            path: "./tests-data/sample-helm-policy/"
             isHelmChart: true
             helmArguments: "--values=./tests-data/sample-helm-policy/values.yaml"
 workflows:
