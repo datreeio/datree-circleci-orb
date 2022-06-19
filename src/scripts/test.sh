@@ -11,6 +11,9 @@ printf "datree version: "
 datree version
 printf "\n"
 
+# shellcheck disable=SC2059
+printf "isHelmChart: $isHelmChart\n"
+
 if [ -z "$DATREE_TOKEN" ]; then
     printf "No account token configured, see https://github.com/naorpeled/datree-circleci-orb for instructions\n"
     exit 1
