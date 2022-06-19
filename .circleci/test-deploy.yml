@@ -22,8 +22,7 @@ jobs:
             cliArguments: "--output=json"
         - datree/test:
             path: "./tests-data/sample-helm-policy"
-            isHelmChart: true
-            helmArguments: "--output=json"
+            isHelmChart: "true"
 workflows:
   test-deploy:
     jobs:
