@@ -16,6 +16,8 @@ if [ -z "$DATREE_TOKEN" ]; then
     exit 1
 fi
 
+echo "$isHelmChart"
+
 if [ "$isHelmChart" = "true" ]; then
     echo "Running Helm"
     helm datree test $targetPath $cliArguments -- $helmArguments
