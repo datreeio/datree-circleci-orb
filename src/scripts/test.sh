@@ -2,9 +2,7 @@
 
 targetPath="$TARGET_PATH"
 cliArguments="$CLI_ARGUMENTS"
-isHelmChart="$IS_HELM_CHART"
 helmArguments="$HELM_ARGUMENTS"
-isKustomization="$IS_KUSTOMIZATION"
 kustomizeArguments="$KUSTOMIZE_ARGUMENTS"
 
 printf "datree version: "
@@ -16,11 +14,9 @@ if [ -z "$DATREE_TOKEN" ]; then
     exit 1
 fi
 
-if $isHelmChart
- then
+if [ "$IS_HELM_CHART" = "true" ]; then
     helm datree test $targetPath $cliArguments -- $helmArguments
-elif $isKustomization
- then
+elif [ "$IS_KUSTOMIZATION" = "true" ]; then
     datree kustomize test $targetPath $cliArguments -- $kustomizeArguments
 else
     datree test $targetPath $cliArguments
