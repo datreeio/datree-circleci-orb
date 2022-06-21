@@ -23,7 +23,6 @@ jobs:
         - datree/test:
             path: "./tests-data/sample-helm-policy/"
             isHelmChart: true
-            helmArguments: "--values=./tests-data/sample-helm-policy/values.yaml"
 workflows:
   test-deploy:
     jobs:
