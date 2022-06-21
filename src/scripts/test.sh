@@ -16,10 +16,9 @@ if [ -z "$DATREE_TOKEN" ]; then
     exit 1
 fi
 
-if [ "$isHelmChart" = "true" ]; then
-    printf 'HELM'
+if [ "$isHelmChart" ]; then
     helm datree test $targetPath $cliArguments -- $helmArguments
-elif [ "$isKustomization" = "true" ]; then
+elif [ "$isKustomization" ]; then
     datree kustomize test $targetPath $cliArguments -- $kustomizeArguments
 else
     datree test $targetPath $cliArguments
