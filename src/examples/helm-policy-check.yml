@@ -1,0 +1,26 @@
+description: >
+  A demonstration of how to run a Helm policy check.
+
+usage:
+  version: 2.1
+  orbs:
+    datree: naorpeled/datree@x.y.z
+
+  jobs:
+    policy-check:
+      executor: datree/default
+
+      environment:
+        - name: DATREE_TOKEN
+          value: $DATREE_TOKEN
+      steps:
+        - checkout
+        - datree/test:
+            path: 'someDirectory/someHelmChartFolder'
+            isHelmChart: true
+            cliArguments: '--schema-version 1.20.0'
+
+  workflows:
+    policy-check:
+      jobs:
+        - policy-check

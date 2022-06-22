@@ -1,5 +1,5 @@
 description: >
-  A demonstration of how to run a policy check.
+  A demonstration of how to run a Kubernetes policy check.
 
 usage:
   version: 2.1
