@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JsonSchemaMappingsProjectConfiguration">
+    <state>
+      <map>
+        <entry key="HTTP Client Private Environment File">
+          <value>
+            <SchemaInfo>
+              <option name="name" value="HTTP Client Private Environment File" />
+              <option name="relativePathToSchema" value="jar://$APPLICATION_HOME_DIR$/plugins/restClient/lib/restClient.jar!/schemas/http-client.private.env-schema.json" />
+              <option name="applicationDefined" value="true" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value=".circleci/test-deploy.yml" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+      </map>
+    </state>
+  </component>
+</project>

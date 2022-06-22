@@ -23,6 +23,9 @@ jobs:
         - datree/test:
             path: "./tests-data/sample-helm-policy/"
             isHelmChart: true
+        - datree/test:
+            path: "./tests-data/sample-kustomize-policy/"
+            isKustomization: true
 workflows:
   test-deploy:
     jobs:
