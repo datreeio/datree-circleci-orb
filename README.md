@@ -1,4 +1,4 @@
-# Datree Orb [![CircleCI status](https://circleci.com/gh/naorpeled/datree-circleci-orb.svg?style=shield "CircleCI status")](https://circleci.com/gh/naorpeled/datree-circleci-orb) [![CircleCI Orb Version](https://badges.circleci.com/orbs/naorpeled/datree.svg)](https://circleci.com/developer/orbs/orb/naorpeled/datree) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/naorpeled/datree-circleci-orb/main/LICENSE)
+# Datree Orb [![CircleCI status](https://circleci.com/gh/datreeio/datree-circleci-orb.svg?style=shield "CircleCI status")](https://circleci.com/gh/datreeio/datree-circleci-orb) [![CircleCI Orb Version](https://badges.circleci.com/orbs/naorpeled/datree.svg)](https://circleci.com/developer/orbs/orb/naorpeled/datree) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/datreeio/datree-circleci-orb/main/LICENSE)
 
 CircleCI orb for using the Datree CLI in your CircleCI jobs.
 
