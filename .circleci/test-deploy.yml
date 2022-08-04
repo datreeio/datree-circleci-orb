@@ -35,7 +35,7 @@ workflows:
       - orb-tools/pack:
           filters: *filters
       - orb-tools/publish:
-          orb-name: datree/datree-orb
+          orb-name: datree/datree
           vcs-type: << pipeline.project.type >>
           pub-type: production
           requires:
