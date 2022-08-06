@@ -4,15 +4,12 @@ description: >
 usage:
   version: 2.1
   orbs:
-    datree: naorpeled/datree@x.y.z
+    datree: datree/datree@1.1.7
 
   jobs:
     policy-check:
       executor: datree/default
 
-      environment:
-        - name: DATREE_TOKEN
-          value: $DATREE_TOKEN
       steps:
         - checkout
         - datree/test:
