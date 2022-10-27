@@ -30,9 +30,9 @@ parameters:
 executor: datree/default
 
 environment:
-      - name: DATREE_TOKEN
-        value: $DATREE_TOKEN
-        
+  - name: DATREE_TOKEN
+    value: $DATREE_TOKEN
+
 steps:
   - checkout
   - datree/test:
@@ -42,4 +42,3 @@ steps:
       isKustomization: <<parameters.isKustomization>>
       kustomizeArguments: <<parameters.kustomizeArguments>>
       path: <<parameters.path>>
-
