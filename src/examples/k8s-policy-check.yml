@@ -1,9 +1,14 @@
-version: 2.1
-orbs:
-  datree: datree/datree@1.1.8
-workflows:
-  policy-check:
-    jobs:
-      - datree/policy-check:
-          path: 'someDirectory/someFile.yaml'
-          cliArguments: '--schema-version 1.20.0'
+description: >
+  A demonstration of how to run a Kubernetes policy check.
+
+usage:
+  version: 2.1
+  orbs:
+    datree: datree/datree@1.1.8
+
+  workflows:
+    policy-check:
+      jobs:
+        - datree/policy-check:
+            path: 'someDirectory/someFile.yaml'
+            cliArguments: '--schema-version 1.20.0'
