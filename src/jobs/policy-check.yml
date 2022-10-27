@@ -1,0 +1,44 @@
+description: >
+  Automatically execute a Datree policy check as a job.
+
+parameters:
+  cliArguments:
+    default: ''
+    description: Additional arguments to pass to the test command
+    type: string
+  helmArguments:
+    default: ''
+    description: Additional arguments to pass to the helm test command
+    type: string
+  isHelmChart:
+    default: false
+    description: Are we running the test on a Helm chart?
+    type: boolean
+  isKustomization:
+    default: false
+    description: Are we running the test on a Kustomization file?
+    type: boolean
+  kustomizeArguments:
+    default: ''
+    description: Additional arguments to pass to the kustomize test command
+    type: string
+  path:
+    default: '**/*.yaml'
+    description: Which file(s) to run the test on?
+    type: string
+
+executor: default
+
+environment:
+  - name: DATREE_TOKEN
+    value: $DATREE_TOKEN
+
+steps:
+  - checkout
+  - test:
+      cliArguments: <<parameters.cliArguments>>
+      helmArguments: <<parameters.helmArguments>>
+      isHelmChart: <<parameters.isHelmChart>>
+      isKustomization: <<parameters.isKustomization>>
+      kustomizeArguments: <<parameters.kustomizeArguments>>
+      path: <<parameters.path>>
