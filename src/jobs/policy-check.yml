@@ -35,7 +35,7 @@ environment:
 
 steps:
   - checkout
-  - datree/test:
+  - test:
       cliArguments: <<parameters.cliArguments>>
       helmArguments: <<parameters.helmArguments>>
       isHelmChart: <<parameters.isHelmChart>>
