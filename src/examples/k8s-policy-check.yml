@@ -4,19 +4,11 @@ description: >
 usage:
   version: 2.1
   orbs:
-    datree: datree/datree@1.1.7
-
-  jobs:
-    policy-check:
-      executor: datree/default
-
-      steps:
-        - checkout
-        - datree/test:
-            path: 'someDirectory/someFile.yaml'
-            cliArguments: '--schema-version 1.20.0'
+    datree: datree/datree@1.1.8
 
   workflows:
     policy-check:
       jobs:
-        - policy-check
+        - datree/policy-check:
+            path: 'someDirectory/someFile.yaml'
+            cliArguments: '--schema-version 1.20.0'
