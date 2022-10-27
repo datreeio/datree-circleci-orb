@@ -4,7 +4,7 @@ description: >
 usage:
   version: 2.1
   orbs:
-    datree: datree/datree@1.1.8
+    datree: datree/datree@1.1.9
 
   workflows:
     policy-check:
