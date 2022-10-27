@@ -27,7 +27,7 @@ parameters:
     description: Which file(s) to run the test on?
     type: string
 
-executor: datree/default
+executor: default
 
 environment:
   - name: DATREE_TOKEN
