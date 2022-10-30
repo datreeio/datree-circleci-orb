@@ -11,8 +11,6 @@ workflows:
   test-deploy:
     jobs:
       # Make sure to include "filters: *filters" in every test job you want to run as part of your deployment.
-      - command-tests:
-          filters: *filters
       - datree/policy-check:
             filters: *filters
             path: "./tests-data/sample-policy.yaml"
