@@ -7,31 +7,25 @@ filters: &filters
   tags:
     only: /.*/
 
-jobs:
-    command-tests:
-      executor: datree/default
-
-      environment:
-        - name: DATREE_TOKEN
-          value: $DATREE_TOKEN
-
-      steps:
-        - checkout
-        - datree/test:
-            path: "./tests-data/sample-policy.yaml"
-            cliArguments: "--output=json"
-        - datree/test:
-            path: "./tests-data/sample-helm-policy/"
-            isHelmChart: true
-        - datree/test:
-            path: "./tests-data/sample-kustomize-policy/"
-            isKustomization: true
 workflows:
   test-deploy:
     jobs:
       # Make sure to include "filters: *filters" in every test job you want to run as part of your deployment.
-      - command-tests:
-          filters: *filters
+      - datree/policy-check:
+            filters: *filters
+            name: "Datree-policy-check"
+            path: "./tests-data/sample-policy.yaml"
+            cliArguments: "--output=json"
+      - datree/policy-check:
+            filters: *filters
+            name: "Datree-helm-policy-check"
+            path: "./tests-data/sample-helm-policy/"
+            isHelmChart: true
+      - datree/policy-check:
+            filters: *filters
+            name: "Datree-kustomize-policy-check"
+            path: "./tests-data/sample-kustomize-policy/"
+            isKustomization: true
       - orb-tools/pack:
           filters: *filters
       - orb-tools/publish:
@@ -40,7 +34,9 @@ workflows:
           pub-type: production
           requires:
             - orb-tools/pack
-            - command-tests
+            - Datree-policy-check
+            - Datree-helm-policy-check
+            - Datree-kustomize-policy-check
           context: orb-publishing
           filters:
             branches:
