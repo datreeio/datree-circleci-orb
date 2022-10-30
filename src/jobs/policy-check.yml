@@ -45,3 +45,4 @@ steps:
         IS_KUSTOMIZATION: <<parameters.isKustomization>>
         KUSTOMIZE_ARGUMENTS: <<parameters.kustomizeArguments>>
       command: <<include(scripts/test.sh)>>
+
