@@ -31,7 +31,7 @@ workflows:
           pub-type: production
           requires:
             - orb-tools/pack
-            - command-tests
+            - datree/policy-check
           context: orb-publishing
           filters:
             branches:
