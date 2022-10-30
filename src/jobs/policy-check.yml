@@ -35,10 +35,13 @@ environment:
 
 steps:
   - checkout
-  - test:
-      cliArguments: <<parameters.cliArguments>>
-      helmArguments: <<parameters.helmArguments>>
-      isHelmChart: <<parameters.isHelmChart>>
-      isKustomization: <<parameters.isKustomization>>
-      kustomizeArguments: <<parameters.kustomizeArguments>>
-      path: <<parameters.path>>
+  - run:
+      name: Run Datree Test Command
+      environment:
+        TARGET_PATH: <<parameters.path>>
+        CLI_ARGUMENTS: <<parameters.cliArguments>>
+        IS_HELM_CHART: <<parameters.isHelmChart>>
+        HELM_ARGUMENTS: <<parameters.helmArguments>>
+        IS_KUSTOMIZATION: <<parameters.isKustomization>>
+        KUSTOMIZE_ARGUMENTS: <<parameters.kustomizeArguments>>
+      command: <<include(scripts/test.sh)>>
