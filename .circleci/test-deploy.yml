@@ -13,14 +13,17 @@ workflows:
       # Make sure to include "filters: *filters" in every test job you want to run as part of your deployment.
       - datree/policy-check:
             filters: *filters
+            name: "Datree-policy-check"
             path: "./tests-data/sample-policy.yaml"
             cliArguments: "--output=json"
       - datree/policy-check:
             filters: *filters
+            name: "Datree-helm-policy-check"
             path: "./tests-data/sample-helm-policy/"
             isHelmChart: true
       - datree/policy-check:
             filters: *filters
+            name: "Datree-kustomize-policy-check"
             path: "./tests-data/sample-kustomize-policy/"
             isKustomization: true
       - orb-tools/pack:
@@ -31,7 +34,9 @@ workflows:
           pub-type: production
           requires:
             - orb-tools/pack
-            - datree/policy-check
+            - Datree-policy-check
+            - Datree-helm-policy-check
+            - Datree-kustomize-policy-check
           context: orb-publishing
           filters:
             branches:
